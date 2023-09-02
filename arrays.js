@@ -18,6 +18,7 @@ arr.shift(); // usuwanie pierwszy element tablicy
 const range = [1, 5, 10];
 
 
+
 range.splice(0, 1); // pierwszy parametr - od elementu którego indeksu zaczynamy, drugi parametr - ile elementów usuwamy
 range.splice(-1, 1); // usunięcie ostatniego elementu tablicy
 

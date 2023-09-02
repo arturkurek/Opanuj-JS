@@ -1,34 +1,36 @@
 const arr = [1, 2, 3, 4, 16, 14, 5];
 
-// reverse -odwrócenie tablicy 
+// reverse -odwrócenie tablicy (odwrócenie kolejności elementów)
 
 arr.reverse(); // [5, 14, 16, 4, 3, 2, 1]
 
-// Modyfikacja zawartości tablicy przy pomocy const jest możliwa, np. poprzez metodę push, ale nie można przypisać nowej tablicy (taka sytuacja, może mieć miejsce w przypadku typów złożonych, takich jak tablicy czy obiekty)
+// Modyfikacja zawartości tablicy przy pomocy const jest możliwa, np. poprzez metodę push, ale nie można przypisać nowej tablicy (taka sytuacja, może mieć miejsce w przypadku typów złożonych, takich jak tablice czy obiekty)
 
-arr.sort((prev, next) => next - prev);  // niejawne zwrócenie wartości // w metodzie sort wartości są traktowane jako tekst [1, 14, 16, 2, 3, 4, 5]
+arr.sort((prev, next) => next - prev);  // niejawne zwrócenie wartości // w metodzie sort wartości są traktowane jako tekst czy ciągi znaków [1, 14, 16, 2, 3, 4, 5]
 
 // W przypadku dodania 14 znajdzie się ona po 1 i przed 16, ponieważ zostaną porównane jedynki oraz 4 i 6 
 
 // callback - to funkcja, która jest przekazywana jako argument do innej funkcji po to, aby było można ją później wykonać
 
 //Jak działa sort?
- 
-// { 
-    // console.log(prev, next); // 16 5, 4 16, 3 4, 2 3, 1 2;
-    // return next - prev; 
+// pary porównywane od końca
 
-    // if (prev > next) {
-    //     return -1;
-    // }
-    // if (prev === next) {
-    //     return 0;
-    // }
-    // if (next > prev) {
-    //     return 1;
-    // }
-
+arr.sort(sortAsc);
+console.log (sortAsc);
+// function sortAsc(prev, next) {
+//     console.log(prev, next);
+//     if (prev > next) {
+//         return 1;
+//     }
+//     if ( prev === next) {
+//         return 0;
+//     }
+//     if (next > prev) {
+//         return -1;
+//     }
 // }
+const sortAsc = (prev, next) => next - prev;
+
 
 // forEach - iteruj po tablicy
 
